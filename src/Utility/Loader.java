@@ -53,7 +53,7 @@ public class Loader {
         }
     }
 
-    public void write(Site site, File file)throws IOException{
+    private void write(Site site, File file)throws IOException{
         System.out.println("Writing " + site.name);
         FileOutputStream fileOut = new FileOutputStream(file);
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -62,7 +62,7 @@ public class Loader {
         fileOut.close();
     }
 
-    public Site read(File file)throws IOException, ClassNotFoundException{
+    private Site read(File file)throws IOException, ClassNotFoundException{
         FileInputStream fileIn = new FileInputStream(file);
         ObjectInputStream in = new ObjectInputStream(fileIn);
         Site site = (Site)in.readObject();
@@ -123,7 +123,7 @@ public class Loader {
         return link.attr("abs:href");
     }
 
-    private static boolean linkValid(String url){
+    public static boolean linkValid(String url){
         if (url.contains("wikipedia.org")){
             if (url.contains(".PNG") || url.contains("(disambiguation)") || url.contains(".svg") || url.contains("Citing_sources")
                     || url.contains("Verifiability") || url.contains("edit") || url.contains("Help") || url.contains(".jpg")

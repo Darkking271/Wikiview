@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="131.0" prefWidth="197.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FX.ErrorDialogController">
+   <children>
+      <JFXButton fx:id="errorSiteButton" layoutX="62.0" layoutY="86.0" onAction="#errorSiteButtonPressed" prefHeight="31.0" prefWidth="73.0" text="OK" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="62.0">
+         <font>
+            <Font name="Roboto Black" size="12.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="69.0" layoutY="14.0" text="Error!" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="69.0">
+         <font>
+            <Font name="Roboto Medium" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="msg" layoutX="42.0" layoutY="54.0" text=" Bad site given" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="41.0">
+         <font>
+            <Font name="Roboto Light" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Main;
+package Swing;
 
 import Utility.*;
 
-import javax.swing.*;
 import java.util.*;
 import java.io.IOException;
 

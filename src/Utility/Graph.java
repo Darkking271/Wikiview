@@ -1,5 +1,8 @@
 package Utility;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.*;
 import java.util.*;
 import java.lang.*;
@@ -39,7 +42,6 @@ public class Graph{
         public double getWeight(){
             return weight;
         }
-
         public int compareTo(Pair item){
             return Double.compare(item.getWeight(), this.weight);
         }
@@ -49,8 +51,8 @@ public class Graph{
     private HashMap<String, Integer> map;
     private Loader load;
     private int count = 0;
-    private final int maxRecursion = 5;
-    private final int maxLinks = 4;
+    private final int maxDepth = 3;
+    private final int maxBreadth = 4;
     private int recursed = 0;
     private String start;
 
@@ -59,7 +61,7 @@ public class Graph{
     public Graph(String url) throws IOException{
         graph = new ArrayList<>();
         map = new HashMap<>();
-        load = new Loader(maxLinks);
+        load = new Loader(maxBreadth);
         start = load.getName(url);
         System.out.println("Building : " + url);
 
@@ -86,6 +88,14 @@ public class Graph{
             names[i] = graph.get(i).name;
         }
         return names;
+    }
+
+    public ObservableList<String> getNamesList(){
+        ObservableList<String> list = FXCollections.observableArrayList();
+        for (Node n : graph){
+            list.addAll(n.name);
+        }
+        return list;
     }
 
     public String similar(String name){
@@ -274,7 +284,7 @@ public class Graph{
             return null;
         }
         Node n = new Node(site.name, site.contents, site.url, site.links);
-        if (recursed < maxRecursion) {
+        if (recursed < maxDepth) {
             for (String link : n.links) {
                 this.recursed++;
                 Node s = span(link);
