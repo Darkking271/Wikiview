@@ -51,8 +51,8 @@ public class Graph{
     private HashMap<String, Integer> map;
     private Loader load;
     private int count = 0;
-    private final int maxDepth = 3;
-    private final int maxBreadth = 4;
+    private final int maxDepth = 4;
+    private final int maxBreadth = 3;
     private int recursed = 0;
     private String start;
 
@@ -88,6 +88,17 @@ public class Graph{
             names[i] = graph.get(i).name;
         }
         return names;
+    }
+
+    public ArrayList<SiteEdges> getEdges() {
+        ArrayList<SiteEdges> edges = new ArrayList<>();
+        for(Node n: graph){
+            SiteEdges siteEdge = new SiteEdges(n.name);
+            for(String s: n.links)
+                siteEdge.addEdges(load.getName(s));
+            edges.add(siteEdge);
+        }
+        return edges;
     }
 
     public ObservableList<String> getNamesList(){

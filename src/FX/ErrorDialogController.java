@@ -10,7 +10,6 @@ public class ErrorDialogController {
     @FXML JFXButton errorSiteButton;
 
     @FXML public void initialize(){
-
         errorSiteButton.setStyle("    -fx-padding: 0.7em 0.75em;\n   " +
                                  "    -fx-font-size: 12px;\n    " +
                                  "    -fx-button-type: RAISED;\n      " +

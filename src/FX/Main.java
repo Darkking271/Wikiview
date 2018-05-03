@@ -20,7 +20,6 @@ public class Main extends Application {
             mainWindow.setTitle("Wikiview");
             mainWindow.setResizable(true);
             mainWindow.setScene(mainScene);
-            mainWindow.setOnCloseRequest(e -> Platform.exit());
             mainWindow.show();
         }catch(Exception e){
             e.printStackTrace();

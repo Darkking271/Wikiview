@@ -22,7 +22,7 @@
       <JFXComboBox fx:id="startPage" labelFloat="true" layoutX="14.0" layoutY="497.0" prefHeight="13.0" prefWidth="150.0" promptText="Select Starting Page" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" />
       <JFXComboBox fx:id="endPage" labelFloat="true" layoutX="157.0" layoutY="491.0" prefHeight="13.0" prefWidth="150.0" promptText="Select Ending Page" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="170.0" />
       <JFXButton fx:id="pathButton" buttonType="RAISED" layoutX="340.0" layoutY="427.0" onAction="#FindPathPressed" prefHeight="25.0" prefWidth="66.0" text="Find Path" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="340.0" />
-      <Label fx:id="title" layoutX="14.0" layoutY="51.0">
+      <Label fx:id="title" layoutX="14.0" layoutY="51.0" AnchorPane.topAnchor="40.0">
          <font>
             <Font name="Roboto Medium" size="18.0" />
          </font>
@@ -32,5 +32,6 @@
             <Font name="Roboto Medium" size="12.0" />
          </font>
       </Label>
+      <JFXButton fx:id="graphButton" onAction="#GraphPressed" text="Show Graph" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="445.0" />
    </children>
 </AnchorPane>
